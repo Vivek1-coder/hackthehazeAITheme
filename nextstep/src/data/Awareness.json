@@ -1,0 +1,57 @@
+[
+  {
+    "question": "How familiar are you with different career options in your field of study?",
+    "options": [
+      "Very familiar – I’ve explored many options",
+      "Somewhat familiar – I know a few paths",
+      "Not very familiar – I know only the basics",
+      "Not at all – I need guidance"
+    ]
+  },
+  {
+    "question": "Have you ever spoken to a working professional or mentor about career choices?",
+    "options": [
+      "Yes, multiple times",
+      "Yes, once or twice",
+      "No, but I would like to",
+      "No, and I don’t know how to find one"
+    ]
+  },
+  {
+    "question": "How often do you read or watch content about career development (like videos, blogs, news, etc.)?",
+    "options": [
+      "Regularly (weekly or more)",
+      "Sometimes (monthly)",
+      "Rarely",
+      "Never"
+    ]
+  },
+  {
+    "question": "Which of the following activities have you participated in?",
+    "options": [
+      "Internships or part-time jobs",
+      "Workshops, hackathons, or competitions",
+      "Career counselling sessions",
+      "Online certification courses",
+      "None of the above"
+    ]
+  },
+  {
+    "question": "How comfortable are you using the internet to explore career opportunities (LinkedIn, job portals, etc.)?",
+    "options": [
+      "Very comfortable – I actively use them",
+      "Somewhat comfortable – I’ve used them occasionally",
+      "Not very comfortable – I’ve tried but find it confusing",
+      "I’ve never tried using these platforms"
+    ]
+  },
+  {
+    "question": "Do you know how to build a resume or prepare for interviews?",
+    "options": [
+      "Yes – I have experience and confidence",
+      "Somewhat – I’ve tried but need practice",
+      "No – I have no idea where to start",
+      "I’ve heard about it but never made one"
+    ]
+  }
+]

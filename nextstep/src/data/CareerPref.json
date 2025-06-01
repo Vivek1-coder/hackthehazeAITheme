@@ -1,0 +1,55 @@
+[
+  {
+    "question": "Which of the following best describes your current career goal?",
+    "options": [
+      "Secure a government job (UPSC, SSC, State Exams, etc.)",
+      "Get a private/corporate job (IT, Finance, Marketing, etc.)",
+      "Start my own business or startup",
+      "Pursue higher education (MTech, MBA, MS, PhD)",
+      "Prepare for competitive exams (NEET, JEE, CLAT, etc.)",
+      "Not sure yet / Exploring options"
+    ]
+  },
+  {
+    "question": "Do you have a dream profession or role in mind?",
+    "options": [
+      "IAS/IPS Officer",
+      "Doctor",
+      "Engineer",
+      "Software Developer",
+      "Entrepreneur",
+      "Teacher / Professor",
+      "Actor / Musician / Artist",
+      "Lawyer / Judge",
+      "I don’t have one yet"
+    ]
+  },
+  {
+    "question": "What motivates you the most in choosing a career?",
+    "options": [
+      "High salary and financial stability",
+      "Respect and social status",
+      "Passion and personal interest",
+      "Work-life balance",
+      "Opportunity to help others or make an impact",
+      "Job security"
+    ]
+  },
+  {
+    "question": "Are you open to exploring career paths outside your academic stream?",
+    "options": [
+      "Yes, completely open",
+      "Maybe, if guided well",
+      "No, I want to stay within my current stream"
+    ]
+  },
+  {
+    "question": "How confident are you in your current career decision?",
+    "options": [
+      "Very confident",
+      "Somewhat confident",
+      "Still exploring / confused",
+      "Not confident at all"
+    ]
+  }
+]

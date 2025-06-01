@@ -1,0 +1,48 @@
+[
+  {
+    "question": "How involved is your family in your career decisions?",
+    "options": [
+      "Very involved – they strongly influence my choices",
+      "Somewhat involved – they give advice but leave the decision to me",
+      "Not very involved – they are neutral",
+      "Not involved at all – I make all decisions myself"
+    ]
+  },
+  {
+    "question": "What kind of career does your family expect you to pursue?",
+    "options": [
+      "Government job (UPSC, SSC, etc.)",
+      "Engineering or Medical",
+      "Business or Family Business",
+      "Any stable job – they just want me to be independent",
+      "They are open to whatever I choose"
+    ]
+  },
+  {
+    "question": "Does your family face financial limitations that may affect your education or career options?",
+    "options": [
+      "Yes – finances are a major concern",
+      "Somewhat – I may need to choose cost-effective options",
+      "No – we are financially stable",
+      "I’m not sure"
+    ]
+  },
+  {
+    "question": "Are you expected to start earning as soon as possible?",
+    "options": [
+      "Yes – I need to start supporting the family",
+      "Yes – but only after graduation",
+      "No – my family is supporting my long-term education",
+      "It depends on future circumstances"
+    ]
+  },
+  {
+    "question": "Would you consider taking an education loan if needed?",
+    "options": [
+      "Yes – I’m open to it if it helps me grow",
+      "Maybe – only if there’s no other option",
+      "No – I prefer affordable or free education",
+      "I don’t know enough about education loans"
+    ]
+  }
+]

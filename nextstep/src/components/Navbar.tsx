@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -7,7 +8,7 @@ const navLinks = [
   { name: "Mentorship", href: "/mentorship" },
   { name: "Career Guidance", href: "/career-guidance" },
   { name: "Community", href: "#community" },
-  { name: "Contact", href: "#contact" },
+  { name: "Signup", href: "/signup" },
 ];
 
 const Navbar: React.FC = () => {
@@ -82,7 +83,7 @@ const Navbar: React.FC = () => {
                 hover:bg-indigo-600 hover:text-white transition
                 transform hover:scale-110 focus:scale-110 focus:outline-none"
             >
-              SignIn
+               {theme === "light" ? "Dark" : "Light"}
             </button>
           </li>
         </ul>
@@ -139,6 +140,7 @@ const Navbar: React.FC = () => {
             </li>
           ))}
           <li>
+            <Link href={`/signup`}>
             <button
               onClick={() => {
                 toggleTheme();
@@ -147,8 +149,9 @@ const Navbar: React.FC = () => {
               aria-label="Toggle Dark Mode"
               className="w-full px-4 py-2 mt-2 border border-gray-400 dark:border-gray-600 rounded-md hover:bg-indigo-600 hover:text-white transition"
             >
-              SignIn
+                {theme === "light" ? "Dark" : "Light"}
             </button>
+            </Link>
           </li>
         </ul>
       </div>

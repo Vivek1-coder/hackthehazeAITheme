@@ -1,0 +1,66 @@
+[
+  {
+    "question": "Which type of tasks do you naturally enjoy?",
+    "options": [
+      "Solving logical problems or puzzles",
+      "Helping others through advice or service",
+      "Building or fixing machines/devices",
+      "Creating art, stories, music, or designs",
+      "Organizing data or documents",
+      "Researching and learning new information",
+      "Debating or discussing ideas"
+    ]
+  },
+  {
+    "question": "How do you prefer to make decisions?",
+    "options": [
+      "By analyzing facts and data",
+      "By considering people’s feelings and relationships",
+      "By following intuition or gut feeling",
+      "By looking at long-term consequences",
+      "By consulting others for opinions"
+    ]
+  },
+  {
+    "question": "How would you describe your working style?",
+    "options": [
+      "Focused and independent",
+      "Flexible and spontaneous",
+      "Collaborative and team-based",
+      "Careful and detail-oriented",
+      "Strategic and goal-driven",
+      "Creative and experimental"
+    ]
+  },
+  {
+    "question": "What kind of environment helps you perform best?",
+    "options": [
+      "Quiet, peaceful, and distraction-free",
+      "Fast-paced and competitive",
+      "Supportive and socially interactive",
+      "Rule-based and structured",
+      "Free, open, and expressive"
+    ]
+  },
+  {
+    "question": "Which statement fits you best?",
+    "options": [
+      "I prefer routine and clear expectations",
+      "I enjoy taking risks and exploring the unknown",
+      "I like helping others grow and succeed",
+      "I love solving technical or analytical problems",
+      "I like expressing myself through art or writing",
+      "I am driven by ambition and leadership"
+    ]
+  },
+  {
+    "question": "How do you usually handle new tasks or challenges?",
+    "options": [
+      "Break them down into smaller steps",
+      "Look for creative or different ways to approach",
+      "Ask for help or input from others",
+      "Experiment and learn from mistakes",
+      "Follow proven methods and systems"
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import questions from "../../../../data/Genral.json"; // Make sure path is correct
+import questions from "../../../../data/CareerPref.json"; // Make sure path is correct
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,7 +14,7 @@ type QuestionType = {
 
 export default function CareerForm() {
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
-  const router = useRouter();
+    const router = useRouter();
 
   const handleChange = (question: string, value: string) => {
     setFormData(prev => ({
@@ -26,7 +26,7 @@ export default function CareerForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Collected Data:", formData);
-    router.replace('/career-guidance/form/2')
+    router.replace('/career-guidance/form/4')
   };
 
   return (

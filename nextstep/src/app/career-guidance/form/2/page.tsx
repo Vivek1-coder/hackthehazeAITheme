@@ -5,6 +5,7 @@ import questionsData from '@/data/Aptitude.json'; // Adjust the path based on yo
 import Navbar from '@/components/Navbar';
 import { motion } from "framer-motion"; 
 import Footer from '@/components/Footer';
+import { useRouter } from 'next/navigation';
 
 type QuestionData = {
   category: string;
@@ -16,7 +17,7 @@ type QuestionData = {
 
 export default function AptitudePage() {
   const [responses, setResponses] = useState<Record<string, string>>({});
-
+  const router = useRouter();
   const handleChange = (question: string, value: string) => {
     setResponses(prev => ({
       ...prev,
@@ -27,6 +28,7 @@ export default function AptitudePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Submitted Aptitude Data:', responses);
+    router.replace('/career-guidance/form/3')
   };
 
   return (
