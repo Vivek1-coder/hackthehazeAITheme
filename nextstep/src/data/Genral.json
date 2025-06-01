@@ -1,0 +1,107 @@
+[
+  {
+    "question": "What is your full name?",
+    "options": []
+  },
+  {
+    "question": "What is your age?",
+    "options": [
+      "10 –12 years",
+      "13–14 years",
+      "15–16 years",
+      "17–18 years",
+      "19–21 years",
+      "22–25 years",
+      "Above 25 years"
+    ]
+  },
+  {
+    "question": "What is your current class or education level?",
+    "options": [
+      "Class 8",
+      "Class 9",
+      "Class 10",
+      "Class 11 (Science)",
+      "Class 11 (Commerce)",
+      "Class 11 (Arts/Humanities)",
+      "Class 12 (Science)",
+      "Class 12 (Commerce)",
+      "Class 12 (Arts/Humanities)",
+      "Diploma/ITI",
+      "Undergraduate - 1st Year",
+      "Undergraduate - 2nd Year",
+      "Undergraduate - Final Year",
+      "Graduate/Postgraduate",
+      "Other"
+    ]
+  },
+
+  {
+    "question": "Which board or university are you affiliated with?",
+    "options": [
+      "CBSE",
+      "ICSE",
+      "State Board",
+      "IB/IGCSE",
+      "Private University",
+      "Central University",
+      "State University",
+      "Other"
+    ]
+  },
+  {
+    "question": "What are your areas of interest?",
+    "options": [
+      "Engineering and Technology",
+      "Medical and Healthcare",
+      "Law and Legal Studies",
+      "Commerce and Finance",
+      "Business and Management",
+      "Civil Services (IAS/IPS/IFS etc.)",
+      "Science and Research (Physics/Chemistry/Biology/Maths)",
+      "Computers and IT (Software, AI, Data Science)",
+      "Arts and Humanities (History, Geography, Political Science, Psychology)",
+      "Design and Creativity (Fashion, Graphic, UI/UX)",
+      "Media and Communication (Journalism, Content Creation, Film-making)",
+      "Defence Services (NDA/CDS/Army/Navy/Air Force)",
+      "Sports and Fitness",
+      "Performing Arts (Dance, Music, Theatre)",
+      "Social Work and NGOs",
+      "Education and Teaching",
+      "Agriculture and Environmental Sciences",
+      "Travel and Tourism",
+      "Gaming and Animation",
+      "Other / Still Exploring"
+    ]
+  },
+  {
+    "question": "How are your academic performance and grades currently?",
+    "options": [
+      "Above 90%",
+      "80% - 90%",
+      "70% - 80%",
+      "60% - 70%",
+      "Below 60%",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "question": "What is your preferred language of instruction?",
+    "options": [
+      "English",
+      "Hindi",
+      "Regional Language",
+      "Bilingual (English + Hindi)",
+      "Other"
+    ]
+  },
+  {
+    "question": "Do you have access to the internet and a digital device for online learning?",
+    "options": [
+      "Yes - Laptop/Desktop",
+      "Yes - Mobile only",
+      "Limited access",
+      "No"
+    ]
+  }
+]

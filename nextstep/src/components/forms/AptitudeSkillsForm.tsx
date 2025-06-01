@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar";
 
 interface Option {
   text?: string;
@@ -56,58 +57,86 @@ export const AptitudeSkillsForm: React.FC<SectionProps> = ({
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-2">{section_name}</h2>
-      <p className="text-gray-600 mb-6">{section_description}</p>
+     <main className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-all pt-10 px-4 sm:px-8 md:px-16">
+  <Navbar />
 
-      {questions.map((q, index) => (
-        <div key={q.id} className="mb-6">
-          <h3 className="font-medium text-lg mb-2">
-            {index + 1}. {q.question}
-          </h3>
-          {q.content && <p className="text-sm mb-2">{q.content}</p>}
-          {q.hint && <p className="text-xs text-gray-500 italic mb-2">Hint: {q.hint}</p>}
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-bold mb-2">{section_name}</h2>
+    <p className="text-gray-700 dark:text-gray-300 mb-8">{section_description}</p>
 
-          {q.options && q.options.map((opt, idx) => (
-            <div key={idx} className="mb-1">
-              <label className="flex items-center gap-2">
+    {questions.map((q, index) => (
+      <div key={q.id} className="mb-8 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md transition-all hover:shadow-lg">
+        <h3 className="font-semibold text-xl mb-3 text-indigo-700 dark:text-indigo-300">
+          {index + 1}. {q.question}
+        </h3>
+
+        {q.content && <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{q.content}</p>}
+
+        {q.hint && (
+          <p className="text-xs italic text-yellow-600 dark:text-yellow-400 mb-3">
+            💡 Hint: {q.hint}
+          </p>
+        )}
+
+        {q.options && q.options.map((opt, idx) => (
+          <label
+            key={idx}
+            className={`flex items-center gap-3 p-3 border rounded-xl mb-2 cursor-pointer hover:bg-indigo-50 dark:hover:bg-gray-700 transition-all ${
+              responses[q.id]?.text === opt.text || responses[q.id]?.image === opt.image
+                ? "border-indigo-600 dark:border-indigo-400 bg-indigo-100 dark:bg-gray-700"
+                : "border-gray-300 dark:border-gray-600"
+            }`}
+          >
+            <input
+              type="radio"
+              className="accent-indigo-600"
+              name={q.id}
+              checked={responses[q.id]?.text === opt.text || responses[q.id]?.image === opt.image}
+              onChange={() => handleOptionSelect(q.id, opt)}
+            />
+            {opt.image ? (
+              <img
+                src={opt.image}
+                alt="option"
+                className="w-20 h-20 object-contain rounded-md border border-gray-300 dark:border-gray-500"
+              />
+            ) : (
+              <span>{opt.text}</span>
+            )}
+          </label>
+        ))}
+
+        {q.sub_questions && q.sub_questions.map((sub, subIdx) => (
+          <div key={subIdx} className="mt-4">
+            <p className="text-sm font-medium mb-2 text-gray-800 dark:text-gray-200">↳ {sub.text}</p>
+            {sub.options.map((opt, optIdx) => (
+              <label
+                key={optIdx}
+                className={`flex items-center gap-2 mb-2 pl-4 py-2 rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-all ${
+                  responses[q.id]?.[subIdx]?.text === opt.text
+                    ? "bg-indigo-100 dark:bg-gray-700"
+                    : ""
+                }`}
+              >
                 <input
                   type="radio"
-                  name={q.id}
-                  checked={responses[q.id]?.text === opt.text || responses[q.id]?.image === opt.image}
-                  onChange={() => handleOptionSelect(q.id, opt)}
+                  className="accent-indigo-600"
+                  name={`${q.id}_${subIdx}`}
+                  checked={responses[q.id]?.[subIdx]?.text === opt.text}
+                  onChange={() => handleSubQuestionSelect(q.id, subIdx, opt)}
                 />
-                {opt.image ? (
-                  <img src={opt.image} alt="option" className="w-20 h-20 object-contain border" />
-                ) : (
-                  <span>{opt.text}</span>
-                )}
+                <span>{opt.text}</span>
               </label>
-            </div>
-          ))}
+            ))}
+          </div>
+        ))}
 
-          {q.sub_questions && q.sub_questions.map((sub, subIdx) => (
-            <div key={subIdx} className="mb-3">
-              <p className="mb-1">- {sub.text}</p>
-              {sub.options.map((opt, optIdx) => (
-                <label key={optIdx} className="flex items-center gap-2 mb-1">
-                  <input
-                    type="radio"
-                    name={`${q.id}_${subIdx}`}
-                    checked={responses[q.id]?.[subIdx]?.text === opt.text}
-                    onChange={() => handleSubQuestionSelect(q.id, subIdx, opt)}
-                  />
-                  <span>{opt.text}</span>
-                </label>
-              ))}
-            </div>
-          ))}
-
-          {q.feedback && (
-            <p className="text-xs text-blue-600 mt-1">Feedback: {q.feedback}</p>
-          )}
-        </div>
-      ))}
-    </div>
+        {q.feedback && (
+          <p className="text-sm text-blue-600 dark:text-blue-400 mt-4">📝 Feedback: {q.feedback}</p>
+        )}
+      </div>
+    ))}
+  </div>
+    </main>
   );
 };

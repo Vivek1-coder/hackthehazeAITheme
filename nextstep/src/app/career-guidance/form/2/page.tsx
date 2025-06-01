@@ -1,109 +1,65 @@
-'use client'
-import { AptitudeSkillsForm } from "@/components/forms/AptitudeSkillsForm";
-import React from "react";
+'use client';
 
-export default function Page() {
+import { useState } from 'react';
+import questionsData from '@/data/Aptitude.json'; // Adjust the path based on your project structure
+import Navbar from '@/components/Navbar';
+import { motion } from "framer-motion"; 
+import Footer from '@/components/Footer';
 
-  const sectionData = {
-    section_name: "Aptitude & Skills Assessment",
-    section_description: "Determine strengths through behavioral and situational questions",
-    scoring_model: {
-      skills_tested: ["logical", "verbal", "spatial", "technical", "creative", "interpersonal"],
-      score_range: [0, 10]
-    },
-    questions: [
-      {
-        id: "apt_1",
-        type: "scenario",
-        question: "When presented with a complex problem, your first instinct is to:",
-        options: [
-          {
-            text: "Break it into smaller parts and analyze systematically",
-            scores: { logical: 2, technical: 1 }
-          },
-          {
-            text: "Draw diagrams or visualize possible solutions",
-            scores: { spatial: 2, creative: 1 }
-          },
-          {
-            text: "Discuss with others to gather perspectives",
-            scores: { interpersonal: 2, verbal: 1 }
-          },
-          {
-            text: "Try hands-on experimentation immediately",
-            scores: { technical: 2, spatial: 1 }
-          }
-        ],
-        max_select: 1
-      },
-      {
-        id: "apt_2",
-        type: "skill_test",
-        question: "Solve this logical sequence: 2, 4, 8, 16, ___",
-        options: [
-          { text: "24", scores: { logical: 1 } },
-          { text: "32", scores: { logical: 3 } },
-          { text: "18", scores: { logical: 0 } },
-          { text: "Not sure", scores: {} }
-        ],
-        time_limit: 30,
-        feedback: "This tests pattern recognition (key for programming/data roles)"
-      },
-      {
-        id: "apt_3",
-        type: "behavioral",
-        question: "How often do people come to you for help with:",
-        sub_questions: [
-          {
-            text: "Fixing technical devices?",
-            options: [
-              { text: "Never", scores: { technical: 0 } },
-              { text: "Sometimes", scores: { technical: 1 } },
-              { text: "Regularly", scores: { technical: 3 } }
-            ]
-          },
-          {
-            text: "Resolving conflicts?",
-            options: [
-              { text: "Never", scores: { interpersonal: 0 } },
-              { text: "Sometimes", scores: { interpersonal: 2 } },
-              { text: "Often", scores: { interpersonal: 4 } }
-            ]
-          }
-        ]
-      },
-      {
-        id: "apt_4",
-        type: "visual",
-        question: "Which 3D shape matches this 2D net? (Show image options)",
-        options: [
-          { image: "cube_net.png", correct: true, scores: { spatial: 3 } },
-          { image: "pyramid_net.png", scores: { spatial: 1 } },
-          { image: "cylinder_net.png", scores: { spatial: 1 } }
-        ],
-        hint: "Tests spatial visualization (important for engineering/design)"
-      },
-      {
-        id: "apt_5",
-        type: "verbal",
-        question: "Read this passage and identify the main argument:",
-        content: "While technology increases productivity, studies show...",
-        options: [
-          { text: "Summarizes key points accurately", scores: { verbal: 3 } },
-          { text: "Captures only secondary details", scores: { verbal: 1 } },
-          { text: "Misinterprets the core idea", scores: { verbal: 0 } }
-        ]
-      }
-    ],
-    result_calculation: {
-      method: "cumulative_scores",
-      thresholds: {
-        high: 8,
-        medium: 5,
-        low: 3
-      }
-    }
+type QuestionData = {
+  category: string;
+  questions: {
+    question: string;
+    options: string[];
+  }[];
+};
+
+export default function AptitudePage() {
+  const [responses, setResponses] = useState<Record<string, string>>({});
+
+  const handleChange = (question: string, value: string) => {
+    setResponses(prev => ({
+      ...prev,
+      [question]: value,
+    }));
   };
 
-  return <AptitudeSkillsForm {...sectionData} />;
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Submitted Aptitude Data:', responses);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-all pt-20 ">
+      <Navbar />
+      <h1 className="text-3xl font-bold mb-6 text-center">Aptitude & Morality Test</h1>
+      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6">
+        {(questionsData as QuestionData[]).flatMap(section => section.questions).map((q, idx) => (
+          <div key={idx} className="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
+            <label className="block font-medium mb-2">{q.question}</label>
+            <select
+              className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-700"
+              onChange={e => handleChange(q.question, e.target.value)}
+              required
+            >
+              <option value="">Select an option</option>
+              {q.options.map((opt, i) => (
+                <option key={i} value={opt}>{opt}</option>
+              ))}
+            </select>
+          </div>
+        ))}
+
+        <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            type="submit"
+            className="w-full mt-6 bg-indigo-600 text-white py-3 rounded-xl font-semibold text-lg hover:bg-indigo-700 transition mb-10"
+          >
+            🚀 Submit
+          </motion.button>
+      </form>
+      <Footer/>
+    </div>
+  );
 }
