@@ -1,11 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import questions from "../../../../data/CareerPref.json"; // Make sure path is correct
-import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { useRouter } from "next/navigation";
+import { useState } from 'react';
+import questionsData from '@/data/Aptitude.json'; // Adjust the path based on your project structure
+import Navbar from '@/components/Navbar';
+import { motion } from "framer-motion"; 
+import Footer from '@/components/Footer';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 type QuestionType = {
   question: string;
@@ -14,7 +15,8 @@ type QuestionType = {
 
 export default function CareerForm() {
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
-    const router = useRouter();
+  const router = useRouter();
+  const questions: QuestionType[] = questionsData;
 
   const handleChange = (question: string, value: string) => {
     setFormData(prev => ({
@@ -23,10 +25,11 @@ export default function CareerForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
+    await axios.post("/api/assessment/add/aptitude", formData);
     console.log("Collected Data:", formData);
-    router.replace('/career-guidance/form/4')
+    router.replace('/career-guidance/form/2')
   };
 
   return (

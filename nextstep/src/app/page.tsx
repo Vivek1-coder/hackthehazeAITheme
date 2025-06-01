@@ -1,6 +1,8 @@
 'use client'
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 
@@ -82,6 +84,12 @@ const CheckIcon = () => (
 const LandingPage: React.FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [contentVisible, setContentVisible] = useState(false);
+  const router = useRouter();
+  const handleSubmit = async() => {
+    const response = await axios.post('/api/assessment/start')
+
+    router.push(`career-guidance/form/1`);
+  }
 
   useEffect(() => {
     if (
@@ -132,11 +140,12 @@ const LandingPage: React.FC = () => {
           </p>
           <a
             href="#features"
+            onClick={()=>(handleSubmit())}
             className="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600
             text-white font-semibold rounded-lg shadow-lg
             transform hover:scale-105 transition-transform duration-300"
           >
-            Explore Features
+            Start Assessment
           </a>
         </section>
 

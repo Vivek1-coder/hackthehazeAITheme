@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import questions from "../../../../data/FamilyandFinancial.json"; // Make sure path is correct
+import questions from "@/data/Personality.json"; // Make sure path is correct
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 type QuestionType = {
   question: string;
@@ -15,7 +16,7 @@ type QuestionType = {
 export default function CareerForm() {
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
     const router = useRouter();
-    
+
   const handleChange = (question: string, value: string) => {
     setFormData(prev => ({
       ...prev,
@@ -23,10 +24,11 @@ export default function CareerForm() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
+    await axios.post(`/api/assessment/add/self`, formData);
     console.log("Collected Data:", formData);
-    router.replace('/career-guidance')
+    router.replace('/career-guidance/form/5')
   };
 
   return (

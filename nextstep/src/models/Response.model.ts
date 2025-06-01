@@ -1,7 +1,8 @@
 import mongoose, { Schema, Document, models, model, Types } from "mongoose";
+import { unique } from "next/dist/build/utils";
 
 export interface IResponse extends Document {
-  userId: mongoose.Types.ObjectId;
+  email:string;
   generalInfo: Record<string, string>;
   aptitude: Record<string, string>;
   careerPreferences: Record<string, string>;
@@ -13,33 +14,36 @@ export interface IResponse extends Document {
 
 const ResponseSchema: Schema = new Schema(
   {
-    userId:{
-      type:Schema.Types.ObjectId,
+    email:{
+      type:String,
       required:true,
+      unique:true
     },
     generalInfo: {
       type: Map,
       of: String,
+      required:false,
     },
     aptitude: {
       type: Map,
       of: String,
-      
+      default:{},
+      required:true,
     },
     careerPreferences: {
       type: Map,
       of: String,
-      
+      required:false,
     },
     awareness: {
       type: Map,
       of: String,
-      
+      required:false,
     },
     familyExpectations: {
       type: Map,
       of: String,
-      
+      required:false,
     },
     skillsAndSelfEval: {
       type: Map,

@@ -24,7 +24,7 @@ export const handler = NextAuth({
         if (!isValid) return null;
 
         return {
-          id: user._id.toString(),
+          id: user.id.toString(),
           email: user.email,
         };
       },
@@ -32,10 +32,13 @@ export const handler = NextAuth({
   ],
 
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
-        token.userId = user.id;
+        token._id = user.id
         token.email = user.email;
+      }
+      if(account){
+        token.accessToken = account.access_token;
       }
       return token;
     },
@@ -43,7 +46,7 @@ export const handler = NextAuth({
     async session({ session, token }) {
       if (token) {
         if (!session.user) session.user = {};
-        (session.user as { email?: string | null; userId?: string }).userId = token.userId as string;
+        (session.user as { email?: string | null; userId?: string }).userId = token._id as string;
         session.user.email = token.email as string;
       }
       return session;

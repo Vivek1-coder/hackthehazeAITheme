@@ -4,10 +4,11 @@ import Response from "@/models/Response.model";
 
 import { NextResponse } from "next/server";
 import { connectToDB } from "@/lib/connectToDB";
-import { handler } from "../../auth/[...nextauth]/route";
+import { handler } from "../../../auth/[...nextauth]/route";
 
 export async function POST(req: Request) {
   await connectToDB();
+  const formData = await req.json();
   interface CustomSession extends Session {
     userId?: string;
   }
@@ -24,24 +25,16 @@ export async function POST(req: Request) {
   try {
     const existingResponse = await Response.find({email:session.user.email});
     if(existingResponse && existingResponse.length > 0){
+      existingResponse[0].skillsAndSelfEval = formData;
+      await existingResponse[0].save();
       return NextResponse.json({ id: existingResponse[0]._id }, { status: 201 });
     }
 
     else{
-      const newResponse = new Response({
-      email: session.user.email,
-      generalInfo: {},
-      aptitude: {},
-      careerPreferences: {},
-      awareness: {},
-      familyExpectations: {},
-      skillsAndSelfEval: {},
-    });
-
-    await newResponse.save();
-
-    // Return only the _id of the created response
-    return NextResponse.json({ id: newResponse._id }, { status: 201 });
+     return NextResponse.json(
+      { error: "Failed to find response" },
+      { status: 404 }
+    );
     }
     
   } catch (error) {

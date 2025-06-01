@@ -3,10 +3,18 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import axios from 'axios';
+import { useState } from 'react';
 
 export default function LandingPage() {
   const router = useRouter();
+  const [resId,setResId] = useState("");
 
+  const handleSubmit = async() => {
+    const response = await axios.post('/api/assessment/start')
+    setResId(response.data.id);
+    router.push(`career-guidance/form/1`);
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-white transition-all">
       <Navbar />
@@ -33,7 +41,7 @@ export default function LandingPage() {
         </motion.p>
 
         <motion.button
-          onClick={() => router.push('career-guidance/form/1')}
+          onClick={() => (handleSubmit())}
           className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg transition-transform transform hover:scale-105"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

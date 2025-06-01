@@ -1,20 +1,21 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import LogoutButton from "./LogoutButton";
+import { useSession } from "next-auth/react";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "#features" },
   { name: "Mentorship", href: "/mentorship" },
-  { name: "Career Guidance", href: "/career-guidance" },
-  { name: "Community", href: "#community" },
-  { name: "Signup", href: "/signup" },
+  { name: "Career Guidance", href: "/career-guidance" }
+ 
 ];
 
 const Navbar: React.FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const { data: session, status } = useSession();
 
   // Animate navbar fade/slide in on mount
   useEffect(() => {
@@ -53,7 +54,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Brand */}
         <a
-          href="#"
+          href="/"
           className="text-indigo-600 dark:text-indigo-400 font-extrabold text-2xl flex items-center gap-2 select-none"
           aria-label="NxtStep logo"
         >
@@ -86,6 +87,22 @@ const Navbar: React.FC = () => {
                {theme === "light" ? "Dark" : "Light"}
             </button>
           </li>
+          {!session ? (
+        <li>
+          <Link href={`/signin`}>
+          <button
+            className="h-10 px-4 bg-purple-700 text-white rounded cursor-pointer hover:scale-105 transition"
+          
+          >
+            Sign In
+          </button>
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <LogoutButton />
+        </li>
+      )}
         </ul>
 
         {/* Mobile Hamburger */}
@@ -152,7 +169,24 @@ const Navbar: React.FC = () => {
                 {theme === "light" ? "Dark" : "Light"}
             </button>
             </Link>
+
           </li>
+          {!session ? (
+        <li>
+          <Link href={`/signin`}>
+          <button
+            className="h-10 px-4 bg-purple-700 text-white rounded cursor-pointer hover:scale-105 transition"
+          
+          >
+            Sign In
+          </button>
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <LogoutButton />
+        </li>
+      )}
         </ul>
       </div>
     </nav>

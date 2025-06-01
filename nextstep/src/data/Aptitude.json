@@ -1,146 +1,116 @@
 [
   {
-    "category": "Logical Reasoning",
-    "questions": [
-      {
-        "question": "What comes next in the series: 3, 6, 11, 18, 27, ?",
-        "options": ["36", "38", "42", "48"]
-      },
-      {
-        "question": "If all roses are flowers and some flowers fade quickly, can we conclude some roses fade quickly?",
-        "options": ["Yes", "No", "Cannot be determined", "None of the above"]
-      },
-      {
-        "question": "Find the odd one out: Apple, Orange, Mango, Carrot",
-        "options": ["Apple", "Orange", "Mango", "Carrot"]
-      }
+    "question": "What comes next in the series: 3, 6, 11, 18, 27, ?",
+    "options": ["36", "38", "42", "48"]
+  },
+  {
+    "question": "If all roses are flowers and some flowers fade quickly, can we conclude some roses fade quickly?",
+    "options": ["Yes", "No", "Cannot be determined", "None of the above"]
+  },
+  {
+    "question": "Find the odd one out: Apple, Orange, Mango, Carrot",
+    "options": ["Apple", "Orange", "Mango", "Carrot"]
+  },
+  {
+    "question": "A shopkeeper sells an item for ₹240 after giving a 20% discount. What is the marked price?",
+    "options": ["₹250", "₹280", "₹300", "₹320"]
+  },
+  {
+    "question": "If 4x - 7 = 25, what is the value of x?",
+    "options": ["6", "7", "8", "10"]
+  },
+  {
+    "question": "A train travels 120 km in 2 hours and 150 km in 2.5 hours. What is the average speed?",
+    "options": ["54 km/h", "60 km/h", "62.5 km/h", "65 km/h"]
+  },
+  {
+    "question": "You find a lost mobile phone in a mall. What will you do?",
+    "options": [
+      "Keep it with you and try to unlock it.",
+      "Take it to the information desk or lost-and-found.",
+      "Ignore it and walk away.",
+      "Post on social media to find the owner."
     ]
   },
   {
-    "category": "Numerical Ability",
-    "questions": [
-      {
-        "question": "A shopkeeper sells an item for ₹240 after giving a 20% discount. What is the marked price?",
-        "options": ["₹250", "₹280", "₹300", "₹320"]
-      },
-      {
-        "question": "If 4x - 7 = 25, what is the value of x?",
-        "options": ["6", "7", "8", "10"]
-      },
-      {
-        "question": "A train travels 120 km in 2 hours and 150 km in 2.5 hours. What is the average speed?",
-        "options": ["54 km/h", "60 km/h", "62.5 km/h", "65 km/h"]
-      }
+    "question": "You saw someone cheating in an online test. What would you do?",
+    "options": [
+      "Report to the teacher.",
+      "Ignore it, not your problem.",
+      "Help them if they’re your friend.",
+      "Tell them to stop after the test."
     ]
   },
   {
-    "category": "Ethical Judgement",
-    "questions": [
-      {
-        "question": "You find a lost mobile phone in a mall. What will you do?",
-        "options": [
-          "Keep it with you and try to unlock it.",
-          "Take it to the information desk or lost-and-found.",
-          "Ignore it and walk away.",
-          "Post on social media to find the owner."
-        ]
-      },
-      {
-        "question": "You saw someone cheating in an online test. What would you do?",
-        "options": [
-          "Report to the teacher.",
-          "Ignore it, not your problem.",
-          "Help them if they’re your friend.",
-          "Tell them to stop after the test."
-        ]
-      },
-      {
-        "question": "A friend shares a private secret about another friend. What do you do?",
-        "options": [
-          "Share it with others.",
-          "Tell the person whose secret it is.",
-          "Keep it confidential.",
-          "Ask your friend why they shared it."
-        ]
-      }
+    "question": "A friend shares a private secret about another friend. What do you do?",
+    "options": [
+      "Share it with others.",
+      "Tell the person whose secret it is.",
+      "Keep it confidential.",
+      "Ask your friend why they shared it."
     ]
   },
   {
-    "category": "Situational Awareness",
-    "questions": [
-      {
-        "question": "If your teacher is absent and a fight breaks out in class, what will you do?",
-        "options": [
-          "Stay out of it.",
-          "Try to stop the fight.",
-          "Inform another teacher or staff.",
-          "Record it and share later."
-        ]
-      },
-      {
-        "question": "If you are part of a group project and one member isn’t contributing, how do you respond?",
-        "options": [
-          "Do all the work yourself.",
-          "Report them to the teacher.",
-          "Talk to them politely to cooperate.",
-          "Leave the project yourself."
-        ]
-      }
+    "question": "If your teacher is absent and a fight breaks out in class, what will you do?",
+    "options": [
+      "Stay out of it.",
+      "Try to stop the fight.",
+      "Inform another teacher or staff.",
+      "Record it and share later."
     ]
   },
   {
-    "category": "Emotional Intelligence",
-    "questions": [
-      {
-        "question": "How do you usually respond when someone gives you constructive criticism?",
-        "options": [
-          "Feel bad and avoid them.",
-          "Listen and reflect on it.",
-          "Argue back to defend yourself.",
-          "Ignore it entirely."
-        ]
-      },
-      {
-        "question": "Your friend is feeling low due to poor exam performance. What will you do?",
-        "options": [
-          "Motivate them with positivity.",
-          "Laugh it off and change the topic.",
-          "Tell them to stop worrying too much.",
-          "Leave them alone until they feel better."
-        ]
-      },
-      {
-        "question": "What do you do when you feel anxious before a test?",
-        "options": [
-          "Talk to someone about it.",
-          "Ignore the feeling and just write.",
-          "Revise quickly to feel prepared.",
-          "Panic and consider not attending."
-        ]
-      }
+    "question": "If you are part of a group project and one member isn’t contributing, how do you respond?",
+    "options": [
+      "Do all the work yourself.",
+      "Report them to the teacher.",
+      "Talk to them politely to cooperate.",
+      "Leave the project yourself."
     ]
   },
   {
-    "category": "Decision Making",
-    "questions": [
-      {
-        "question": "You have to choose between joining your dream college or staying close to family. What will you consider first?",
-        "options": [
-          "Career opportunity and college quality.",
-          "What my family wants.",
-          "What my friends are doing.",
-          "Where I feel emotionally secure."
-        ]
-      },
-      {
-        "question": "If your exam preparation clashes with your favorite cousin’s wedding, what will you do?",
-        "options": [
-          "Attend the full wedding and risk the exam.",
-          "Skip the wedding completely.",
-          "Attend part of it and prioritize study.",
-          "Ask the teacher to reschedule your test."
-        ]
-      }
+    "question": "How do you usually respond when someone gives you constructive criticism?",
+    "options": [
+      "Feel bad and avoid them.",
+      "Listen and reflect on it.",
+      "Argue back to defend yourself.",
+      "Ignore it entirely."
+    ]
+  },
+  {
+    "question": "Your friend is feeling low due to poor exam performance. What will you do?",
+    "options": [
+      "Motivate them with positivity.",
+      "Laugh it off and change the topic.",
+      "Tell them to stop worrying too much.",
+      "Leave them alone until they feel better."
+    ]
+  },
+  {
+    "question": "What do you do when you feel anxious before a test?",
+    "options": [
+      "Talk to someone about it.",
+      "Ignore the feeling and just write.",
+      "Revise quickly to feel prepared.",
+      "Panic and consider not attending."
+    ]
+  },
+  {
+    "question": "You have to choose between joining your dream college or staying close to family. What will you consider first?",
+    "options": [
+      "Career opportunity and college quality.",
+      "What my family wants.",
+      "What my friends are doing.",
+      "Where I feel emotionally secure."
+    ]
+  },
+  {
+    "question": "If your exam preparation clashes with your favorite cousin’s wedding, what will you do?",
+    "options": [
+      "Attend the full wedding and risk the exam.",
+      "Skip the wedding completely.",
+      "Attend part of it and prioritize study.",
+      "Ask the teacher to reschedule your test."
     ]
   }
 ]
