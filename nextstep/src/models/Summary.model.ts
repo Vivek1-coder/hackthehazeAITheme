@@ -1,17 +1,16 @@
 import mongoose, { Schema, Document, models, model } from "mongoose";
 
 export interface IResponseSummary extends Document {
-  userId: mongoose.Types.ObjectId;
+  email: string;
   summary: string;
   createdAt: Date;
 }
 
 const ResponseSummarySchema: Schema = new Schema(
   {
-    userId: {
-      type: Schema.Types.ObjectId,
+    email: {
+      type: String,
       required: true,
-      ref: "User", 
     },
     summary: {
       type: String,
